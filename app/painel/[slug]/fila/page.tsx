@@ -11,7 +11,8 @@ import {
   XCircle,
   ChevronRight,
   Search,
-  Filter
+  Filter,
+  LucideIcon
 } from 'lucide-react';
 
 type OrdemStatus = 'aguardando' | 'lavando' | 'secando' | 'finalizado' | 'entregue' | 'cancelado';
@@ -29,7 +30,7 @@ interface Ordem {
   valor: number;
 }
 
-const statusConfig: Record<OrdemStatus, { label: string; cor: string; bg: string; icon: React.ComponentType<{className?: string}> }> = {
+const statusConfig: Record<OrdemStatus, { label: string; cor: string; bg: string; icon: LucideIcon }> = {
   aguardando: { label: 'Aguardando', cor: '#F59E0B', bg: 'rgba(245, 158, 11, 0.1)', icon: Clock },
   lavando: { label: 'Lavando', cor: '#3B82F6', bg: 'rgba(59, 130, 246, 0.1)', icon: Droplets },
   secando: { label: 'Secando', cor: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)', icon: Wind },
