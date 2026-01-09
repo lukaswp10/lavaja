@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  /* Paleta de Cores - LavaJa (configuravel via painel) */
+  --cor-primaria: #0066FF;
+  --cor-primaria-hover: #0052CC;
+  --cor-secundaria: #00D4AA;
+  --cor-secundaria-hover: #00B894;
+  
+  /* Fundos */
+  --cor-fundo: #0A0A0F;
+  --cor-fundo-elevado: #12121A;
+  --cor-card: #12121A;
+  --cor-card-hover: #1A1A24;
+  
+  /* Bordas */
+  --cor-borda: #1E1E2E;
+  --cor-borda-hover: #2E2E3E;
+  
+  /* Textos */
+  --cor-texto: #FFFFFF;
+  --cor-texto-secundario: #B8B8C8;
+  --cor-texto-muted: #8B8B9E;
+  
+  /* Status */
+  --cor-sucesso: #22C55E;
+  --cor-erro: #EF4444;
+  --cor-aviso: #F59E0B;
+  --cor-info: #3B82F6;
+  
+  /* Gradientes */
+  --gradiente-primario: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
+  --gradiente-fundo: radial-gradient(ellipse at top, #12121A 0%, #0A0A0F 100%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--gradiente-fundo);
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Inputs */
+input, textarea, select {
+  background-color: var(--cor-card);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.2);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--cor-texto-muted);
+}
+
+/* Botoes */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cor-fundo);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cor-borda);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-texto-muted);
+}
+
+/* Classes utilitarias */
+.glass {
+  background: rgba(18, 18, 26, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--cor-borda);
+}
+
+.btn-primary {
+  background: var(--cor-primaria);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--cor-primaria-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--cor-texto);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: 1px solid var(--cor-borda);
+}
+
+.btn-secondary:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+/* Animacao de pulse para loading */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animacao de spin para loading */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
