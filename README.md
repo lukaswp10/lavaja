@@ -116,4 +116,3 @@ O projeto esta configurado para deploy na Vercel:
 ## Licenca
 
 Projeto privado - Todos os direitos reservados.
-

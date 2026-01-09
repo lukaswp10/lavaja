@@ -79,4 +79,3 @@ export function useEmpresaConfigs(empresaId: string | null) {
 
   return { configs, loading };
 }
-
